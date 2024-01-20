@@ -1,4 +1,3 @@
-// NomPosteSection.js
 import React from 'react';
 
 const NomPosteSection = ({ formData, setFormData }) => {

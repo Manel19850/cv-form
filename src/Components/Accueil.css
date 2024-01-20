@@ -1,0 +1,30 @@
+
+  .accueil-container
+  {
+    background-color: #252b43;
+  }
+  .video {
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  .presentation
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presentation p
+  {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .bloc-titre img {
+    border-radius: 10px;
+   width: 400px;
+    margin-top: -60px; 
+    margin-bottom: 40px;}
+
+  
