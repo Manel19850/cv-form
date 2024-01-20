@@ -1,4 +1,5 @@
 import React from 'react';
+import './NomPosteSection.css'; // Importez le fichier CSS que vous avez créé
 
 const NomPosteSection = ({ formData, setFormData }) => {
   const handlePosteChange = (index, value) => {
@@ -9,7 +10,7 @@ const NomPosteSection = ({ formData, setFormData }) => {
   };
 
   return (
-    <div>
+    <div className="nom-poste-section-container">
       <h2>Postes recherchés</h2>
       {formData.postes.map((poste, index) => (
         <div key={index}>

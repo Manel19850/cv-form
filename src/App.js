@@ -102,11 +102,16 @@ function App() {
         currentSection === 5 && <Logiciel formData={formData} setFormData={setFormData} />
       )}
 
-      <div>
-        {currentSection > 0 && !formSubmitted && <button onClick={handlePrevious}>Précédent</button>}
-        {currentSection < totalSections - 1 && <button onClick={handleNext}>Suivant</button>}
-        {currentSection === totalSections - 1 && !formSubmitted && <button onClick={handleSubmit}>Envoyer</button>}
-      </div>
+<div className='distance'>
+  {currentSection > 0 && !formSubmitted && currentSection <= 5 && <button className={`custom-button section-${currentSection}-button`} onClick={handlePrevious}>Précédent</button>}
+  {currentSection < totalSections - 1 && currentSection <= 5 && <button className={`custom-button section-${currentSection}-button`} onClick={handleNext}>Suivant</button>}
+  {currentSection === totalSections - 1 && !formSubmitted && currentSection <= 5 && <button className="custom-button submit-button" onClick={handleSubmit}>Envoyer</button>}
+
+  {currentSection > 5 && !formSubmitted && <button className={`custom-button section-${currentSection}-button`} onClick={handlePrevious}>Précédent</button>}
+  {currentSection < totalSections - 1 && currentSection > 5 && <button className={`custom-button section-${currentSection}-button`} onClick={handleNext}>Suivant</button>}
+  {currentSection === totalSections - 1 && !formSubmitted && currentSection > 5 && <button className="custom-button submit-button" onClick={handleSubmit}>Envoyer</button>}
+</div>
+
     </div>
   );
 }

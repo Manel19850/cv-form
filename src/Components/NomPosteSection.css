@@ -1,0 +1,33 @@
+
+.nom-poste-section-container {
+    width: 50%;
+    margin: 0 auto; 
+    margin-bottom: 20%;
+    padding: 20px; 
+  }
+  
+
+  .nom-poste-section-container h2 {
+    margin-top: 20%;
+    margin-bottom: 30px; 
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    
+  }
+  
+  .nom-poste-section-container div {
+    margin-bottom: 15px; 
+  }
+  
+  .nom-poste-section-container label {
+    display: block; 
+    margin-bottom: 5px; 
+  }
+  
+  .nom-poste-section-container input {
+    width: 100%; 
+    padding: 8px; 
+    box-sizing: border-box; 
+  }
+  

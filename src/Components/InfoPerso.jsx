@@ -1,4 +1,5 @@
 import React from 'react';
+import './InfoPerso.css';
 
 const InfoPerso = ({ formData, setFormData }) => {
   const { nom, prenom, dateNaissance, adresse, codePostale, ville, email, numeroTelephone, nationalite, permisConduire } = formData;
@@ -11,7 +12,7 @@ const InfoPerso = ({ formData, setFormData }) => {
   };
 
   return (
-    <div>
+    <div className="info-perso-container">
       <h2>Informations Personnelles</h2>
       <div>
         <label htmlFor="nom">Nom :</label>
