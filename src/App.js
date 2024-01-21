@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Accueil from './Components/Accueil';
 import NomPosteSection from './Components/NomPosteSection';
 import InfoPerso from './Components/InfoPerso';
 import Experience from './Components/Experiences';
@@ -7,8 +8,7 @@ import Formation from './Components/Formations';
 import Langue from './Components/Langues';
 import Logiciel from './Components/Logiciels';
 import ConfirmationPage from './Components/Confirmation';
-import Accueil from './Components/Accueil';
-
+import FormButtons from './Components/FormButtons';
 
 function App() {
   const totalSections = 6;
@@ -87,31 +87,31 @@ function App() {
     }
   };
 
+  const sections = [
+    <Accueil />,
+    <NomPosteSection formData={formData} setFormData={setFormData} />,
+    <InfoPerso formData={formData} setFormData={setFormData} />,
+    <Experience formData={formData} setFormData={setFormData} />,
+    <Formation formData={formData} setFormData={setFormData} />,
+    <Langue formData={formData} setFormData={setFormData} />,
+    currentSection === 5 ? <Logiciel formData={formData} setFormData={setFormData} /> : null,
+    currentSection === 6 && formSubmitted ? <ConfirmationPage /> : null,
+  ];
+  
   return (
     <div className="App">
-      {currentSection === 0 && <Accueil />}
-      {currentSection === 1 && <NomPosteSection formData={formData} setFormData={setFormData} />}
-      {currentSection === 2 && <InfoPerso formData={formData} setFormData={setFormData} />}
-      {currentSection === 3 && <Experience formData={formData} setFormData={setFormData} />}
-      {currentSection === 4 && <Formation formData={formData} setFormData={setFormData} />}
-      {currentSection === 5 && <Langue formData={formData} setFormData={setFormData} />}
+      {sections[currentSection]}
 
-      {formSubmitted && currentSection === totalSections - 1 ? (
-        <ConfirmationPage />
-      ) : (
-        currentSection === 5 && <Logiciel formData={formData} setFormData={setFormData} />
-      )}
-
-<div className='distance'>
-  {currentSection > 0 && !formSubmitted && currentSection <= 5 && <button className={`custom-button section-${currentSection}-button`} onClick={handlePrevious}>Précédent</button>}
-  {currentSection < totalSections - 1 && currentSection <= 5 && <button className={`custom-button section-${currentSection}-button`} onClick={handleNext}>Suivant</button>}
-  {currentSection === totalSections - 1 && !formSubmitted && currentSection <= 5 && <button className="custom-button submit-button" onClick={handleSubmit}>Envoyer</button>}
-
-  {currentSection > 5 && !formSubmitted && <button className={`custom-button section-${currentSection}-button`} onClick={handlePrevious}>Précédent</button>}
-  {currentSection < totalSections - 1 && currentSection > 5 && <button className={`custom-button section-${currentSection}-button`} onClick={handleNext}>Suivant</button>}
-  {currentSection === totalSections - 1 && !formSubmitted && currentSection > 5 && <button className="custom-button submit-button" onClick={handleSubmit}>Envoyer</button>}
-</div>
-
+      <div className='distance'>
+        <FormButtons
+          currentSection={currentSection}
+          totalSections={totalSections}
+          formSubmitted={formSubmitted}
+          handlePrevious={handlePrevious}
+          handleNext={handleNext}
+          handleSubmit={handleSubmit}
+        />
+      </div>
     </div>
   );
 }

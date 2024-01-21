@@ -1,0 +1,50 @@
+.custom-button {
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #252b43; 
+    background-color: #ffffff; 
+    border: 2px solid #ffffff; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s
+    }
+    
+  
+  .section-button-container {
+   
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .first-section-button {
+  margin-left: 45%;
+  margin-bottom: 30px;
+  }
+  
+  
+  .section-previous-button {
+    order: 1; 
+    margin-left: 200px;
+    margin-bottom: 200px;
+  }
+  
+  .section-next-button {
+    order: 2; 
+    margin-right: 200px;
+    margin-bottom: 200px;
+  }
+  
+  .submit-button {
+    order: 2;
+    margin-right: 200px;
+    margin-bottom: 200px;
+  }
+  

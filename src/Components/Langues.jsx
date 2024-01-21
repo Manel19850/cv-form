@@ -1,4 +1,5 @@
 import React from 'react';
+import './Langues.css'
 
 const Langue = ({ formData, setFormData }) => {
   const { langues } = formData;
@@ -29,13 +30,13 @@ const Langue = ({ formData, setFormData }) => {
   };
 
   return (
-    <div>
-      <h2>Langues</h2>
+    <div className="langue-container">
+      <h2 className="langue-title">Langues</h2>
       {langues.map((langue, index) => (
-        <div key={index}>
-          <h3>Langue {index + 1}</h3>
+        <div key={index} className="langue-input">
+          <h3 className="langue-subtitle">Langue {index + 1}</h3>
           <div>
-            <label htmlFor={`nomLangue${index}`}>Nom de la langue :</label>
+            <label className="langue-label1" htmlFor={`nomLangue${index}`}>Nom de la langue :</label>
             <input
               type="text"
               id={`nomLangue${index}`}
@@ -44,7 +45,7 @@ const Langue = ({ formData, setFormData }) => {
             />
           </div>
           <div>
-            <label htmlFor={`niveauLangue${index}`}>Niveau :</label>
+            <label className="langue-label2" htmlFor={`niveauLangue${index}`}>Niveau :</label>
             <input
               type="text"
               id={`niveauLangue${index}`}
@@ -52,10 +53,10 @@ const Langue = ({ formData, setFormData }) => {
               onChange={(e) => handleLangueChange(index, 'niveau', e.target.value)}
             />
           </div>
-          <button onClick={() => supprimerLangue(index)}>Supprimer cette langue</button>
+          <button className="langue-button" onClick={() => supprimerLangue(index)}>Supprimer cette langue</button>
         </div>
       ))}
-      <button onClick={ajouterLangue}>Ajouter une langue</button>
+      <button className="langue-button" onClick={ajouterLangue}>Ajouter une langue</button>
     </div>
   );
 };

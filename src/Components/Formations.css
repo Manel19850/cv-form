@@ -1,0 +1,64 @@
+.formation-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .formation-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .formation-subtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .formation-input {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  
+  .formation-input input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none; 
+    border-radius: 5px;
+    background-color: #f5f5f5; 
+  }
+  
+  .formation-label {
+    display: block;
+    margin-left: -70%;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .formation-label4
+  {display: block;
+    margin-left: -93%;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;}
+  
+  .formation-button {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #252b43; 
+    background-color: #ffffff; 
+    border: 2px solid #ffffff; 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s;
+  }
+  
+  .formation-buttons-container {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    gap: 10px;
+  }
+  

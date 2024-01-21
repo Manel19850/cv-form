@@ -1,4 +1,5 @@
 import React from 'react';
+import './Formations.css';
 
 const Formation = ({ formData, setFormData }) => {
   const { formations } = formData;
@@ -29,13 +30,13 @@ const Formation = ({ formData, setFormData }) => {
   };
 
   return (
-    <div>
-      <h2>Formations</h2>
+    <div className="formation-container">
+      <h2 className="formation-title">Formations</h2>
       {formations.map((formation, index) => (
-        <div key={index}>
-          <h3>Formation {index + 1}</h3>
+        <div key={index} className="formation-input">
+          <h3 className="formation-subtitle">Formation {index + 1}</h3>
           <div>
-            <label htmlFor={`dateFormation${index}`}>Date de la formation :</label>
+            <label className="formation-label" htmlFor={`dateFormation${index}`}>Date de la formation :</label>
             <input
               type="text"
               id={`dateFormation${index}`}
@@ -44,7 +45,7 @@ const Formation = ({ formData, setFormData }) => {
             />
           </div>
           <div>
-            <label htmlFor={`intituleFormation${index}`}>Intitulé de la formation :</label>
+            <label className="formation-label" htmlFor={`intituleFormation${index}`}>Intitulé de la formation :</label>
             <input
               type="text"
               id={`intituleFormation${index}`}
@@ -53,7 +54,7 @@ const Formation = ({ formData, setFormData }) => {
             />
           </div>
           <div>
-            <label htmlFor={`organismeFormation${index}`}>Nom de l'organisme :</label>
+            <label className="formation-label" htmlFor={`organismeFormation${index}`}>Nom de l'organisme :</label>
             <input
               type="text"
               id={`organismeFormation${index}`}
@@ -62,7 +63,7 @@ const Formation = ({ formData, setFormData }) => {
             />
           </div>
           <div>
-            <label htmlFor={`villeFormation${index}`}>Ville :</label>
+            <label className="formation-label4" htmlFor={`villeFormation${index}`}>Ville :</label>
             <input
               type="text"
               id={`villeFormation${index}`}
@@ -70,10 +71,10 @@ const Formation = ({ formData, setFormData }) => {
               onChange={(e) => handleFormationChange(index, 'ville', e.target.value)}
             />
           </div>
-          <button onClick={() => supprimerFormation(index)}>Supprimer cette formation</button>
+          <button className="formation-button" onClick={() => supprimerFormation(index)}>Supprimer cette formation</button>
         </div>
       ))}
-      <button onClick={ajouterFormation}>Ajouter une formation</button>
+      <button className="formation-button" onClick={ajouterFormation}>Ajouter une formation</button>
     </div>
   );
 };
